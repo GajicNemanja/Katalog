@@ -1,0 +1,109 @@
+﻿<Window x:Class="Katalog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="496.703" Width="702.801"
+        Loaded="Window_Loaded">
+        <Grid>
+        <TabControl TabStripPlacement="Right">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <ContentPresenter Content="{TemplateBinding Content}">
+                                    <ContentPresenter.LayoutTransform>
+                                        <RotateTransform Angle="90" />
+                                    </ContentPresenter.LayoutTransform>
+                                </ContentPresenter>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Padding" Value="5" />
+                </Style>
+            </TabControl.Resources>
+            <TabItem x:Name="uiKatalogTab" Header="Katalog">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Height="Auto" Margin="0,0,0,0" Grid.Row="0" Width="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="80"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="uiSearchTextbox" Grid.Column="0"></TextBox>
+                            <Button x:Name="uiSearchButton" Grid.Column="1" Content="Pretraga"></Button>
+                        </Grid>
+                    </Grid>
+                    <DataGrid x:Name="uiSearchDataGrid" Margin="0,0,0,0" Grid.Row="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Unos vrednosti">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Height="Auto" Margin="0,0,0,0" Grid.Row="0" Width="Auto">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="uiEditSearchTextbox" Grid.Column="0"></TextBox>
+                            <Button x:Name="uiEditSearchButton" Grid.Column="1" Content="Pretraga"></Button>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox VerticalAlignment="Bottom" Height="25" x:Name="uiEditItemName" Grid.Column="0"/>
+                        <TextBox VerticalAlignment="Bottom" Height="25" x:Name="uiEditItemDescription" Grid.Column="1"/>
+                        <TextBox VerticalAlignment="Bottom" Height="25" x:Name="uiEditItemCatCode" Grid.Column="2"/>
+                        <Button x:Name="uiEditItemButton" Grid.Column="3" Content="Dodaj" Click="uiEditItemButton_Click"/>
+                        <Label VerticalAlignment="Top" Grid.Column="0" HorizontalAlignment="Center" Content="Stavka"/>
+                        <Label VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Center" Content="Opis"/>
+                        <Label VerticalAlignment="Top" Grid.Column="2" HorizontalAlignment="Center" Content="Kataloski kod"/>
+                    </Grid>
+                    <DataGrid x:Name="uiEditItemDatagrid" Grid.Row="2" CanUserReorderColumns="False" SelectionMode="Single" SelectionChanged="uiEditItemDatagrid_SelectionChanged">
+                        
+                    </DataGrid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox VerticalAlignment="Bottom" Height="25" Grid.Column="0" x:Name="uiEditRowVendor"/>
+                        <TextBox VerticalAlignment="Bottom" Height="25" Grid.Column="1" x:Name="uiEditRowInPrice"/>
+                        <TextBox VerticalAlignment="Bottom" Height="25" Grid.Column="2" x:Name="uiEditRowRabat"/>
+                        <TextBox VerticalAlignment="Bottom" Height="25" Grid.Column="3" x:Name="uiEditRowOutPrice"/>
+                        <TextBox VerticalAlignment="Bottom" Height="25" Grid.Column="4" x:Name="uiEditRowComment"/>
+                        <DatePicker x:Name="uiEditRowDate" VerticalAlignment="Bottom" Grid.Column="5"/>
+                        <Button x:Name="uiEditRowButton" Content="Dodaj" Grid.Column="7" Click="uiEditRowButton_Click"/>
+                        <Label VerticalAlignment="Top" Grid.Column="0" HorizontalAlignment="Center" Content="Dobavljac"/>
+                        <Label VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Center" Content="Ulazna cena"/>
+                        <Label VerticalAlignment="Top" Grid.Column="2" HorizontalAlignment="Center" Content="Rabat"/>
+                        <Label VerticalAlignment="Top" Grid.Column="3" HorizontalAlignment="Center" Content="Izlazna cena"/>
+                        <Label VerticalAlignment="Top" Grid.Column="4" HorizontalAlignment="Center" Content="Komentar"/>
+                        <Label VerticalAlignment="Top" Grid.Column="5" HorizontalAlignment="Center" Content="Datum"/>
+                    </Grid>
+                    <DataGrid x:Name="uiEditRowDatagrid" Grid.Row="4"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

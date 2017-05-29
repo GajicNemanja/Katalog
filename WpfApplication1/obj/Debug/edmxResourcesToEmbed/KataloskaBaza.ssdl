@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KatalogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Stavke">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stavka" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Opis" Type="nvarchar(max)" />
+    <Property Name="Inventurni kod" Type="nchar" MaxLength="10" />
+    <Property Name="Ulaz" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Izlaz" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Unosi">
+    <Key>
+      <PropertyRef Name="PrimKey" />
+    </Key>
+    <Property Name="PrimKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="bigint" Nullable="false" />
+    <Property Name="Dobavljac" Type="nvarchar(max)" />
+    <Property Name="Ulazna cena" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Rabat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Izlazna cena" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Marza" Type="decimal" Precision="38" Scale="16" StoreGeneratedPattern="Computed" />
+    <Property Name="Komentari" Type="nvarchar(max)" />
+    <Property Name="Datum" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Unosi_Stavke">
+    <End Role="Stavke" Type="Self.Stavke" Multiplicity="1" />
+    <End Role="Unosi" Type="Self.Unosi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stavke">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="Unosi">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KatalogModelStoreContainer">
+    <EntitySet Name="Stavke" EntityType="Self.Stavke" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unosi" EntityType="Self.Unosi" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Unosi_Stavke" Association="Self.FK_Unosi_Stavke">
+      <End Role="Stavke" EntitySet="Stavke" />
+      <End Role="Unosi" EntitySet="Unosi" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,17 @@
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\Katalog.exe.config
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\Katalog.csprojResolveAssemblyReference.cache
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\MainWindow.baml
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\MainWindow.g.cs
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\App.g.cs
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\Katalog_MarkupCompile.cache
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\Katalog.g.resources
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\Katalog.Properties.Resources.resources
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\Katalog.csproj.GenerateResource.Cache
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\Katalog.exe
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\Katalog.pdb
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\EntityFramework.dll
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\EntityFramework.xml
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\Katalog.exe
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\Katalog.pdb

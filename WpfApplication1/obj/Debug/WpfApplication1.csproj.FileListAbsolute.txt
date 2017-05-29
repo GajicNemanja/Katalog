@@ -1,0 +1,2 @@
+C:\Users\Degor\Documents\Katalog\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe.config
+C:\Users\Degor\Documents\Katalog\WpfApplication1\WpfApplication1\bin\Debug\Katalog.exe.config
