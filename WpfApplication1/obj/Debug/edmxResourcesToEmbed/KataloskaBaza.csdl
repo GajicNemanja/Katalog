@@ -17,9 +17,9 @@
     <Property Name="Stavka" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Inventurni_kod" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Ulaz" Type="Double" />
+    <Property Name="Izlaz" Type="Double" />
     <NavigationProperty Name="Unosis" Relationship="KatalogModel.FK_Unosi_Stavke" FromRole="Stavke" ToRole="Unosi" />
-    <Property Name="Ulaz" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="Izlaz" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -38,10 +38,10 @@
     <Property Name="PrimKey" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ItemID" Type="Int64" Nullable="false" />
     <Property Name="Dobavljac" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Ulazna_cena" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="Rabat" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-    <Property Name="Izlazna_cena" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="Marza" Type="Decimal" Precision="38" Scale="16" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Ulazna_cena" Type="Double" />
+    <Property Name="Rabat" Type="Double" Nullable="false" />
+    <Property Name="Izlazna_cena" Type="Double" />
+    <Property Name="Marza" Type="Double" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Komentari" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="Stavke" Relationship="KatalogModel.FK_Unosi_Stavke" FromRole="Unosi" ToRole="Stavke" />

@@ -24,8 +24,8 @@ namespace Katalog
         public string Stavka { get; set; }
         public string Opis { get; set; }
         public string Inventurni_kod { get; set; }
-        public Nullable<decimal> Ulaz { get; set; }
-        public Nullable<decimal> Izlaz { get; set; }
+        public Nullable<double> Ulaz { get; set; }
+        public Nullable<double> Izlaz { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Unosi> Unosis { get; set; }

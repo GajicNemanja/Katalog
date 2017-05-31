@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2c1bb597e6084d578720e871df7c3448" Name="Diagram1">
-        <EntityTypeShape EntityType="KatalogModel.Stavke" Width="1.5" PointX="2.5" PointY="1.5" />
-        <EntityTypeShape EntityType="KatalogModel.sysdiagram" Width="1.5" PointX="2.5" PointY="4.75" />
-        <EntityTypeShape EntityType="KatalogModel.Unosi" Width="1.5" PointX="4.75" PointY="1" />
+        <EntityTypeShape EntityType="KatalogModel.Stavke" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="KatalogModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="KatalogModel.Unosi" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="KatalogModel.FK_Unosi_Stavke" />
       </Diagram>
     </edmx:Diagrams>

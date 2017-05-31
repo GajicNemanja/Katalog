@@ -17,10 +17,10 @@ namespace Katalog
         public long PrimKey { get; set; }
         public long ItemID { get; set; }
         public string Dobavljac { get; set; }
-        public Nullable<decimal> Ulazna_cena { get; set; }
-        public decimal Rabat { get; set; }
-        public Nullable<decimal> Izlazna_cena { get; set; }
-        public Nullable<decimal> Marza { get; set; }
+        public Nullable<double> Ulazna_cena { get; set; }
+        public double Rabat { get; set; }
+        public Nullable<double> Izlazna_cena { get; set; }
+        public Nullable<double> Marza { get; set; }
         public string Komentari { get; set; }
         public System.DateTime Datum { get; set; }
     

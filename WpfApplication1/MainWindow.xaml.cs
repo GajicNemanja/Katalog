@@ -72,7 +72,7 @@ namespace Katalog
 
         private void RefreshEntries()
         {
-            if (SelectedRow.ItemID != -1)
+            if (SelectedRow == null || SelectedRow.ItemID != -1)
             {
                 var query = BazaPodataka.Unosis.Select(foo => new Entry
                 {
@@ -108,7 +108,6 @@ namespace Katalog
                 BazaPodataka.SaveChanges();
                 RefreshSearch();
                 RefreshItems();
-                RefreshEntries();
 
             }
         }
@@ -117,7 +116,11 @@ namespace Katalog
         {
             if (SelectedRow.ItemID == -1)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("Nije izabrana stavka");
+            }
+            else if (uiEditRowDate.SelectedDate == null)
+            {
+                MessageBox.Show("Nije izabran datum");
             }
             else
             {
@@ -129,36 +132,40 @@ namespace Katalog
 
                 if (!string.IsNullOrWhiteSpace(uiEditRowInPrice.Text))
                 {
-                    bar.Ulaz = decimal.Parse(uiEditRowInPrice.Text);
-                    newInput.Ulazna_cena = decimal.Parse(uiEditRowInPrice.Text);
+                    bar.Ulaz = double.Parse(uiEditRowInPrice.Text);
+                    newInput.Ulazna_cena = double.Parse(uiEditRowInPrice.Text);
                 }
                 if (!string.IsNullOrWhiteSpace(uiEditRowOutPrice.Text))
                 {
-                    bar.Izlaz = decimal.Parse(uiEditRowOutPrice.Text);
-                    newInput.Izlazna_cena = decimal.Parse(uiEditRowOutPrice.Text);
+                    bar.Izlaz = double.Parse(uiEditRowOutPrice.Text);
+                    newInput.Izlazna_cena = double.Parse(uiEditRowOutPrice.Text);
                 }
-                if (!string.IsNullOrWhiteSpace(uiEditRowOutPrice.Text))
+                if (!string.IsNullOrWhiteSpace(uiEditRowRabat.Text))
                 {
-                    newInput.Rabat = decimal.Parse(uiEditRowRabat.Text);
+                    newInput.Rabat = double.Parse(uiEditRowRabat.Text);
                 }
                 
                 newInput.ItemID = bar.ItemID;
+                newInput.Dobavljac = uiEditRowVendor.Text;
                 newInput.Komentari = uiEditRowComment.Text;
                 newInput.Datum = uiEditRowDate.SelectedDate.Value;
                 BazaPodataka.Unosis.Add(newInput);
 
                 BazaPodataka.SaveChanges();
                 RefreshSearch();
-                RefreshItems();
                 RefreshEntries();
+                RefreshItems();
             }
         }
 
         private void uiEditItemDatagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //ItemRow SelectedItem = (ItemRow)uiEditItemDatagrid.SelectedItem;
-            SelectedRow = (ItemRow)uiEditItemDatagrid.SelectedItem;
-            Console.WriteLine(SelectedRow.ItemID);
+            if (uiEditItemDatagrid.SelectedItem != null)
+            {
+                SelectedRow = (ItemRow)uiEditItemDatagrid.SelectedItem;
+            }            
+            //Console.WriteLine(SelectedRow.ItemID);
             RefreshEntries();
         }
 
@@ -170,8 +177,8 @@ public class ItemRow {
     public string Stavka { get; set; }
     public string Opis { get; set; }
     public string InvKod { get; set; }
-    public decimal? Ulaz { get; set; }
-    public decimal? Izlaz { get; set; }
+    public double? Ulaz { get; set; }
+    public double? Izlaz { get; set; }
 }
 
 public class Entry
@@ -179,9 +186,9 @@ public class Entry
     public long PrimKey { get; set; }
     public long ItemID { get; set; }
     public string Dobavljac { get; set; }
-    public decimal? Ulaz { get; set; }
-    public decimal? Izlaz { get; set; }
-    public decimal? Rabat { get; set; }
+    public double? Ulaz { get; set; }
+    public double? Izlaz { get; set; }
+    public double? Rabat { get; set; }
     public string Komentari { get; set; }
     public DateTime Datum { get; set; }
 

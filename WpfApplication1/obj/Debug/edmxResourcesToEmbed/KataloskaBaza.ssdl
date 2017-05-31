@@ -8,8 +8,8 @@
     <Property Name="Stavka" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Opis" Type="nvarchar(max)" />
     <Property Name="Inventurni kod" Type="nchar" MaxLength="10" />
-    <Property Name="Ulaz" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="Izlaz" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Ulaz" Type="float" />
+    <Property Name="Izlaz" Type="float" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -28,10 +28,10 @@
     <Property Name="PrimKey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ItemID" Type="bigint" Nullable="false" />
     <Property Name="Dobavljac" Type="nvarchar(max)" />
-    <Property Name="Ulazna cena" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="Rabat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Izlazna cena" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="Marza" Type="decimal" Precision="38" Scale="16" StoreGeneratedPattern="Computed" />
+    <Property Name="Ulazna cena" Type="float" />
+    <Property Name="Rabat" Type="float" Nullable="false" />
+    <Property Name="Izlazna cena" Type="float" />
+    <Property Name="Marza" Type="float" StoreGeneratedPattern="Computed" />
     <Property Name="Komentari" Type="nvarchar(max)" />
     <Property Name="Datum" Type="date" Nullable="false" />
   </EntityType>
