@@ -15,3 +15,6 @@ C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\EntityFramewor
 C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\Katalog.exe
 C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\obj\Debug\Katalog.pdb
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\Excel.dll
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Degor\Documents\GitHub\Katalog\WpfApplication1\bin\Debug\Excel.pdb
